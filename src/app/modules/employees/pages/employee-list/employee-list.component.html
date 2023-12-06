@@ -1,0 +1,59 @@
+
+<form class="w-full">
+  <mat-form-field  class="w-1/2 !mb-4 !m-0 filter-search-input">
+    <mat-icon class="text-neutral-400" matPrefix>search</mat-icon>
+    <input
+      type="text"
+      [placeholder]="'search'"
+      #dataTableSearch
+      matInput
+      (input)="onSearchWith(dataTableSearch.value)"
+    />
+  </mat-form-field>
+</form>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Index Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element?.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element?.name}} </td>
+  </ng-container>
+
+  <!-- department Column -->
+  <ng-container matColumnDef="department">
+    <th mat-header-cell *matHeaderCellDef> Department </th>
+    <td mat-cell *matCellDef="let element"> {{element?.department}} </td>
+  </ng-container>
+  <!-- skills Column -->
+  <ng-container matColumnDef="skills">
+    <th mat-header-cell *matHeaderCellDef> Skills  </th>
+    <td mat-cell *matCellDef="let element"> {{element?.skills}} </td>
+  </ng-container>
+    <!-- skills Column -->
+    <ng-container matColumnDef="performance">
+      <th mat-header-cell *matHeaderCellDef> Performance </th>
+      <td mat-cell *matCellDef="let element"> {{element?.performance}} </td>
+    </ng-container>
+  <!-- actions Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <td mat-cell *matCellDef="let row; let index=index;">
+      <button class="btn btn-primary btn-base" type="button" (click)="relocationEmployee(row,index)"
+        [matTooltip]="'Relocate'">
+        Relocate
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">No data matching the filter "{{dataTableSearch.value}}"</td>
+  </tr>
+</table>

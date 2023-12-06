@@ -1,0 +1,29 @@
+.btn {
+  @apply box-border flex justify-center font-medium text-center select-none bg-transparent border border-transparent transition-colors duration-300 ease-in items-center;
+
+  &-base {
+      @apply px-5 py-2.5 text-sm rounded-sm leading-5 border;
+  }
+
+
+  &-primary {
+      &:disabled {
+          mat-spinner circle {
+              @apply stroke-neutral-200;
+          }
+      }
+      mat-spinner circle {
+          @apply stroke-white;
+      }
+      @apply bg-primary-500 text-white hover:bg-primary-600 focus:bg-primary-500 focus:outline-[3px]	focus:outline-primary-200 focus:outline-offset-0 focus:outline;
+      @apply disabled:bg-neutral-200 disabled:text-neutral-400 #{!important};
+  }
+
+  &-secondary {
+      @apply bg-primary-200 text-primary-600 hover:bg-primary-400 focus:bg-transparent focus:border-neutral-300 focus:text-neutral-700 focus:border-solid disabled:bg-neutral-200 disabled:text-neutral-400;
+  }
+
+  &-tertiary {
+      @apply bg-transparent border-neutral-300 text-neutral-700 hover:bg-neutral-200 hover:border-transparent disabled:bg-neutral-200 disabled:text-neutral-400 disabled:border-transparent focus:outline-neutral-200 focus:outline-offset-0 focus:outline focus:bg-transparent;
+  }
+}

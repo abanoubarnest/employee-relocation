@@ -1,0 +1,11 @@
+<div class="snackbar-container">
+  <div class="snackbar-container__content flex items-center">
+    <mat-icon class="snackbar-container__content-icon" *ngIf="data.icon">{{ data.icon }}</mat-icon>
+    <span class="text-white text-sm mx-3">{{ data.message }}</span>
+  </div>
+  <div class="button-container">
+    <button (click)="snackBarRef.dismiss()" mat-button aria-label="Clear">
+      <mat-icon class="text-white">close</mat-icon>
+    </button>
+  </div>
+</div>

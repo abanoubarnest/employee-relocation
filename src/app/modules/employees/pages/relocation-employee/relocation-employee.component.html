@@ -1,0 +1,38 @@
+<div class="edit-mail">
+  <div mat-dialog-title>
+      <h1>Department</h1>
+      <app-close-dialog></app-close-dialog>
+  </div>
+  <div mat-dialog-content [formGroup]="departmentForm" >
+      <!-- appearance="outline" -->
+      <mat-form-field appearance="outline"  class="w-1/2">
+
+          <mat-select
+            placeholder="select department"
+            formControlName="department"
+          >
+            <mat-option [value]="depart" *ngFor="let depart of departmentList; trackBy:trackBy">{{depart }}</mat-option>
+          </mat-select>
+          <mat-error>
+          </mat-error>
+      </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+      <button
+          mat-button
+          (click)="onNoClick()"
+          class="btn btn-base btn-tertiary"
+      >
+          Cancel
+      </button>
+      <button
+          (click)="onYesClick()"
+          [disabled]="orgDepartment ==department?.value "
+          mat-flat-button
+          cdkFocusInitial
+          class="btn btn-primary"
+      >
+          Save
+      </button>
+  </div>
+</div>
