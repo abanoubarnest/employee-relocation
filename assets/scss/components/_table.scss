@@ -1,0 +1,49 @@
+.mat-table {
+  @apply border border-solid border-neutral-200 w-full shadow-none;
+  thead {
+      tr.mat-header-row {
+          @apply bg-neutral-100 #{!important};
+          .mat-header-cell {
+              @apply text-neutral-500 font-semibold;
+          }
+          .mat-sort-header {
+              .mat-sort-header-container {
+                  .mat-sort-header-arrow {
+                      // Hide default arrow stem
+                      .mat-sort-header-stem {
+                          display: none !important;
+                      }
+                      .mat-sort-header-indicator {
+                          // Hide default arrow as its composed of left, right and middle
+                          .mat-sort-header-pointer-left,
+                          .mat-sort-header-pointer-right,
+                          .mat-sort-header-pointer-middle {
+                              display: none !important;
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
+  tr {
+      border: 0;
+      td.mat-cell {
+          border: 0;
+      }
+      &:nth-child(even) {
+          @apply bg-neutral-100;
+      }
+  }
+  tbody {
+      tr.mat-row {
+          @apply h-[3.75rem] hover:bg-neutral-200;
+          .mat-cell {
+              @apply text-sm text-neutral-700 font-normal;
+              .action {
+                  @apply text-neutral-500;
+              }
+          }
+      }
+  }
+}

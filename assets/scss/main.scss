@@ -1,0 +1,16 @@
+// https://sass-guidelin.es/#architecture
+
+// Vendors
+@import 'vendors/bootstrap';
+@import 'vendors/tailwind';
+@import 'components/forms';
+@import 'components/button';
+@import 'components/toastr';
+@import 'components/table';
+@import 'components/dialog';
+@import 'components/dropdown';
+@import 'components/input';
+@import 'typography/typography';
+@import 'abstracts/colors';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
